@@ -825,6 +825,24 @@ h3 {
   }
 }
 
+
+.service-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-list li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.service-list i {
+  font-size: 1.2rem;
+  min-width: 28px;
+}
+
+
 /* line 13, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slick-nav.scss */
 .slicknav_menu .slicknav_nav {
   background: #fff;
@@ -1548,9 +1566,9 @@ h3 {
 }
 
 /* line 4, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
-.slider_bg_2 {
+/* .slider_bg_2 {
   background-image: url(../img/banner/banner2.png);
-}
+} */
 
 /* line 7, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
 .slider_area {
@@ -2177,9 +2195,9 @@ h3 {
 
 /* line 19, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_features.scss */
 .features_area .single_feature {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   background: #fff;
-  padding: 50px 30px 40px 30px;
+  padding: 30px 30px 30px 30px;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;

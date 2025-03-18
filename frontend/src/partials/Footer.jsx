@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Footer = () => {
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       <footer className="footer">
@@ -124,7 +127,7 @@ const Footer = () => {
               <div className="col-xl-12">
                 <p className="copy_right text-center">
 
-                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.albertwatbin.com" target="_blank">Watbin Albert</a>
+                  Copyright &copy; {currentYear} All rights reserved | This website is developed by <a href="https://www.albertwatbin.com" target="_blank">Watbin Albert</a>
 
                 </p>
               </div>
