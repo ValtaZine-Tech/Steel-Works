@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../partials/Header'
 import Footer from '../partials/Footer'
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link } from 'react-router-dom';
 
 
 const LandingPage = () => {
@@ -35,34 +36,36 @@ const LandingPage = () => {
       <div className="features_area">
         <div className="container">
           <div className="row">
+            {/* Feature 1 */}
             <div className="col-lg-4 col-md-4">
               <div className="single_feature text-center rounded_corner">
                 <div className="icon">
                   <i className="flaticon-sketch"></i>
                 </div>
                 <h3>Creative Plan & Design</h3>
-                <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                  suffered alteration.</p>
+                <p>Customized solutions blending innovation with precision engineering, transforming your architectural vision into reality.</p>
               </div>
             </div>
+
+            {/* Feature 2 */}
             <div className="col-lg-4 col-md-4">
               <div className="single_feature text-center rounded_corner">
                 <div className="icon">
                   <i className="flaticon-helmet"></i>
                 </div>
-                <h3>Talented Peoples</h3>
-                <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                  suffered alteration.</p>
+                <h3>Expert Craftsmanship</h3>
+                <p>Certified professionals delivering flawless installations with meticulous attention to detail and safety standards.</p>
               </div>
             </div>
+
+            {/* Feature 3 */}
             <div className="col-lg-4 col-md-4">
               <div className="single_feature text-center rounded_corner">
                 <div className="icon">
                   <i className="flaticon-support"></i>
                 </div>
-                <h3>Modern Tools</h3>
-                <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                  suffered alteration.</p>
+                <h3>Advanced Technology</h3>
+                <p>State-of-the-art equipment ensuring precision fabrication crafting and efficient project execution from start to finish.</p>
               </div>
             </div>
           </div>
@@ -90,7 +93,7 @@ const LandingPage = () => {
                   <p>
                     Our expert team is dedicated to transforming both commercial and residential spaces with precision, durability, and a modern aesthetic. From secure burglar-proof grills to elegant office partitions, we combine functionality with contemporary design.
                   </p>
-                  <a href="about.html" className="boxed-btn3">Learn More</a>
+                  <Link to="/about" className="boxed-btn3 extended_button">Learn More</Link>
                 </div>
               </div>
             </div>

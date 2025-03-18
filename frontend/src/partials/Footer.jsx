@@ -20,7 +20,7 @@ const Footer = () => {
                 </div>
                 <div className="col-lg-6 col-md-6 ">
                   <div className="download_btn">
-                    <a href="#" className="rounded_corner"> <img src="/src/assets/img/icon/down.svg" alt="" /> Download Brochure</a>
+                    <a href="#" className="rounded_corner"> <img src="/img/icon/down.svg" alt="" /> Download Brochure</a>
                   </div>
                 </div>
               </div>
