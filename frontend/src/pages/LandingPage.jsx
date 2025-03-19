@@ -20,10 +20,9 @@ const LandingPage = () => {
               <div className="row align-items-center justify-content-center">
                 <div className="col-xl-9 col-md-9 col-md-12">
                   <div className="slider_text text-center">
-                    <h3>We Build Your Home
-                      Secure and Safe</h3>
-                    <p>Build Your Home Secure and Safe with Professional Touch</p>
-                    <a href="services.html" className="boxed-btn3">Our Services</a>
+                    <h3>Transforming Spaces with Precision & Style</h3>
+                    <p>Strong, Stylish, and Secure—Crafted with Precision.</p>
+                    <Link to="/services" className="boxed-btn3" onClick={() => window.scrollTo(0, 0)}>Our Services</Link>
                   </div>
                 </div>
               </div>
@@ -93,7 +92,7 @@ const LandingPage = () => {
                   <p>
                     Our expert team is dedicated to transforming both commercial and residential spaces with precision, durability, and a modern aesthetic. From secure burglar-proof grills to elegant office partitions, we combine functionality with contemporary design.
                   </p>
-                  <Link to="/about" className="boxed-btn3 extended_button">Learn More</Link>
+                  <Link to="/about" className="boxed-btn3 extended_button" onClick={() => window.scrollTo(0, 0)}>Learn More</Link>
                 </div>
               </div>
             </div>
@@ -181,7 +180,7 @@ const LandingPage = () => {
             </div>
             <div className="col-lg-4 col-md-5">
               <div className="contact_btn">
-                <a className="boxed-btn3" href="contact.html">Contact Us</a>
+                <Link className="boxed-btn3" to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
               </div>
             </div>
           </div>

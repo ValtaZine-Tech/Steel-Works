@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -18,11 +19,13 @@ const Footer = () => {
                     </a>
                   </div>
                 </div>
+
                 <div className="col-lg-6 col-md-6 ">
                   <div className="download_btn">
-                    <a href="#" className="rounded_corner"> <img src="/img/icon/down.svg" alt="" /> Download Brochure</a>
+                    <a href="/brochures/" className="rounded_corner" download> <img src="/img/icon/down.svg" alt="" /> Download Brochure</a>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -91,19 +94,21 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
+
               <div className="col-xl-2 col-md-6 col-lg-2 offset-xl-1 offset-lg-1">
                 <div className="footer_widget">
                   <h3 className="footer_title">
-                    Useful Links
+                    Quick Links
                   </h3>
                   <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#"> Contact</a></li>
-                    <li><a href="#"> Appointment</a></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/services">Services</Link></li>
+                    <li><Link to="/contact"> Contact</Link></li>
+                    <li><a href="#"> Call Us Now</a></li>
                   </ul>
                 </div>
               </div>
+
               <div className="col-xl-4 col-md-6 col-lg-4">
                 <div className="footer_widget">
                   <h3 className="footer_title">
@@ -113,10 +118,10 @@ const Footer = () => {
                     <input type="text" placeholder="Enter your mail" />
                     <button type="submit">Subscribe</button>
                   </form>
-                  <p className="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
-                    luckily.</p>
+                  <p className="newsletter_text">Stay updated with the latest innovations, and services in the construction and industrial world. Subscribe to our newsletter and never miss an update!</p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -127,7 +132,7 @@ const Footer = () => {
               <div className="col-xl-12">
                 <p className="copy_right text-center">
 
-                  Copyright &copy; {currentYear} All rights reserved | This website is developed by <a href="https://www.albertwatbin.com" target="_blank">Watbin Albert</a>
+                  Copyright &copy; {currentYear} All rights reserved | This website is developed by <a href="https://www.albertwatbin.com" target="_blank">Albert Watbin</a>
 
                 </p>
               </div>

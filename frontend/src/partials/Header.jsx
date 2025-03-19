@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
 
     const location = useLocation();
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!isMobileMenuOpen);
+    };
 
     return (
         <>
@@ -14,9 +19,9 @@ const Header = () => {
                             <div className="row justify-content-between align-items-center">
                                 <div className="col-xl-3 col-lg-3">
                                     <div className="logo">
-                                        <a href="index.html">
-                                            <img src="/src/assets/img/logo.png" alt="" />
-                                        </a>
+                                        <Link to="/">
+                                            <img src="/img/logo.png" alt="" />
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-9">
@@ -105,8 +110,72 @@ const Header = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-12">
-                                        <div className="mobile_menu d-block d-lg-none">
+                                    <div className="col-12 d-lg-none">
+                                        <div className="mobile_menu">
+                                            <div className="col-12 row mobile_menu_container">
+                                                <div className="logo">
+                                                    <Link to="/">
+                                                        <img src="/img/logo.png" alt="" />
+                                                    </Link>
+                                                </div>
+                                                <div className="mobile_menu_toggle">
+                                                    <button
+                                                        className="mobile_menu_btn"
+                                                        onClick={toggleMobileMenu}
+                                                    >
+                                                        <i className="bi bi-list"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                className={`mobile_menu ${isMobileMenuOpen ? 'open' : 'closed'
+                                                    }`}
+                                            >
+                                                <nav>
+                                                    <ul id="navigation">
+                                                        <li>
+                                                            <Link
+                                                                to="/"
+                                                                className={location.pathname === '/' ? 'active' : ''}
+                                                                onClick={toggleMobileMenu}
+                                                            >
+                                                                Home
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link
+                                                                to="/about"
+                                                                className={location.pathname === '/about' ? 'active' : ''}
+                                                                onClick={toggleMobileMenu}
+                                                            >
+                                                                About
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link
+                                                                to="/services"
+                                                                className={location.pathname === '/services' ? 'active' : ''}
+                                                                onClick={toggleMobileMenu}
+                                                            >
+                                                                Services
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link
+                                                                to="/contact"
+                                                                className={location.pathname === '/contact' ? 'active' : ''}
+                                                                onClick={toggleMobileMenu}
+                                                            >
+                                                                Contact
+                                                            </Link>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+
+
+
                                         </div>
                                     </div>
                                 </div>

@@ -822,10 +822,89 @@ h3 {
 @media (max-width: 767px) {
   /* line 4, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slick-nav.scss */
   .mobile_menu {
-    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #040E27;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     right: 0px;
-    width: 100%;
-    z-index: 9;
+    height: 60px;
+    width: 100vw;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  .mobile_menu .logo {
+    width: 200px; 
+  }
+  .mobile_menu_container {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mobile_menu.open {
+    position: absolute;
+    display: flex;
+    top: 100%;
+    margin: 68px 10px 0 10px;
+    left: auto;
+    right: auto;
+  }
+  
+  .mobile_menu.closed {
+    display: none;
+  }
+  
+  .mobile_menu ul {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 20px 10px;
+    margin: 0 auto;
+    width: 100vw;
+    list-style: none;
+    background-color: #ffffff;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile_menu ul li {
+    padding: 10px 20px;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  .mobile_menu ul li a {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .mobile_menu ul li a.active {
+    color: #FDAE5C;
+    padding-left: 10px;
+  }
+  
+  .mobile_menu_toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+  }
+  
+  .mobile_menu_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .mobile_menu_btn i {
+    color: #ffffff;
+    font-size: 40px;
+    line-height: 0;
   }
 }
 
@@ -1015,6 +1094,7 @@ h3 {
   /* line 17, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_header.scss */
   .header-area .main-header-area {
     background: #040E27;
+    height: 60px;
   }
 }
 
@@ -1041,7 +1121,8 @@ h3 {
   .header-area .main-header-area .white_bg_bar {
     margin-top: 0;
     background: #040E27;
-    padding: 10px 0;
+    /* padding: 15px 0; */
+    height: auto;
   }
 }
 
@@ -3320,12 +3401,21 @@ h3 {
 
 /* line 10, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_contact.scss */
 .contact-info {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
+  padding: 30px 15px;
+  border-radius: 2rem;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* line 13, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_contact.scss */
 .contact-info__icon {
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 /* line 16, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_contact.scss */
@@ -3454,6 +3544,9 @@ h3 {
   /* line 133, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_contact.scss */
   .contact-section {
     padding: 70px 0 40px;
+  }
+  .contact-info__icon {
+    margin-left: 0px;
   }
 }
 

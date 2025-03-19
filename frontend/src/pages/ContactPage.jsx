@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import Header from '../partials/Header'
 import Footer from '../partials/Footer'
@@ -42,12 +43,13 @@ const ContactPage = () => {
       <section className="contact-section">
         <div className="container">
 
-          <div className="row mb-40">
+          <div className="row mb-10">
             <div className="col-12">
               <h2 className="contact-title">Leave a Message</h2>
             </div>
-            <div className="col-lg-8">
-            <form classNameName="form-contact contact_form" action="../pages/contact_process.php" method="POST" id="contactForm">
+
+            <div className="col-lg-7">
+              <form classNameName="form-contact contact_form" action="../pages/contact_process.php" method="POST" id="contactForm">
                 <div className="row">
                   <div className="col-12">
                     <div className="form-group">
@@ -75,23 +77,36 @@ const ContactPage = () => {
                 </div>
               </form>
             </div>
-            <div className="col-lg-3 offset-lg-1">
+
+            <div className="col-lg-4 offset-1">
               <div className="media contact-info">
-                <span className="contact-info__icon"><i className="ti-home"></i></span>
+                <span className="contact-info__icon">
+                  <div className="icon">
+                    <img src="/img/icon/header-address.svg" alt="" />
+                  </div>
+                </span>
                 <div className="media-body">
                   <h3>Buttonwood, California.</h3>
                   <p>Rosemead, CA 91770</p>
                 </div>
               </div>
               <div className="media contact-info">
-                <span className="contact-info__icon"><i className="ti-tablet"></i></span>
+                <span className="contact-info__icon">
+                  <div className="icon">
+                    <img src="/img/icon/headset.svg" alt="" />
+                  </div>
+                </span>
                 <div className="media-body">
                   <h3>+1 253 565 2365</h3>
                   <p>Mon to Fri 9am to 6pm</p>
                 </div>
               </div>
               <div className="media contact-info">
-                <span className="contact-info__icon"><i className="ti-email"></i></span>
+                <span className="contact-info__icon">
+                  <div className="icon">
+                    <img src="/img/icon/mail.png" alt="" style={{width: 32, height: 35}}/>
+                  </div>
+                </span>
                 <div className="media-body">
                   <h3>support@colorlib.com</h3>
                   <p>Send us your query anytime!</p>
@@ -100,7 +115,7 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="d-none d-sm-block mb-5 pb-4">
+          {/* <div className="d-none d-sm-block mb-5 pb-4">
             {isLoaded ? (
               <GoogleMap
                 mapContainerStyle={containerStyle}
@@ -123,12 +138,11 @@ const ContactPage = () => {
                   scrollwheel: false
                 }}
               >
-                {/* Child components, like markers, info windows, etc. */}
               </GoogleMap>
             ) : (
               <div>Loading map...</div>
             )}
-          </div>
+          </div> */}
 
         </div>
       </section>
