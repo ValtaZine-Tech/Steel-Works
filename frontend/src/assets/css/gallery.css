@@ -1,0 +1,40 @@
+/* Gallery.css */
+.grid-item {
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .grid-item.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .portfolio-menu button {
+    transition: all 0.3s ease;
+  }
+
+  .thumb {
+    /* border: 1px solid orange; */
+    height: 20rem;
+    overflow: hidden;
+  }
+
+  .portfolio-nav {
+    /* border: 1px solid orange; */
+  }
+
+  .gallery_nav_card {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  @media (max-width: 767px) {
+    .gallery_nav_card {
+      justify-content: center;
+      align-items: center;
+    }
+  }

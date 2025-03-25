@@ -32,7 +32,7 @@ const Header = () => {
                                             </div>
                                             <div className="address_info">
                                                 <h3>Address</h3>
-                                                <p>20/D, Kings road, Green lane</p>
+                                                <p>Kampala, Uganda</p>
                                             </div>
                                         </div>
                                         <div className="single_address d-flex">
@@ -41,7 +41,7 @@ const Header = () => {
                                             </div>
                                             <div className="address_info">
                                                 <h3>Call Us</h3>
-                                                <p>+10 673 567 367</p>
+                                                <a href="tel:+256701546115" style={{color: '#fff'}}>0701546115</a>
                                             </div>
                                         </div>
                                     </div>
@@ -79,6 +79,14 @@ const Header = () => {
                                                             className={location.pathname === '/about' ? 'active' : ''}
                                                         >
                                                             About
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link
+                                                            to="/gallery"
+                                                            className={location.pathname === '/gallery' ? 'active' : ''}
+                                                        >
+                                                            Gallery
                                                         </Link>
                                                     </li>
                                                     <li>
@@ -152,6 +160,17 @@ const Header = () => {
                                                                 About
                                                             </Link>
                                                         </li>
+
+                                                        <li>
+                                                            <Link
+                                                                to="/gallery"
+                                                                className={location.pathname === '/gallery' ? 'active' : ''}
+                                                                onClick={toggleMobileMenu}
+                                                            >
+                                                                Gallery
+                                                            </Link>
+                                                        </li>
+
                                                         <li>
                                                             <Link
                                                                 to="/services"
@@ -161,6 +180,7 @@ const Header = () => {
                                                                 Services
                                                             </Link>
                                                         </li>
+                                                        
                                                         <li>
                                                             <Link
                                                                 to="/contact"

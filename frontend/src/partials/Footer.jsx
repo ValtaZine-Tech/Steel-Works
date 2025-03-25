@@ -39,9 +39,9 @@ const Footer = () => {
                   <h3 className="footer_title">
                     About
                   </h3>
-                  <p>5th flora, 700/D kings road, green <br /> lane New York-1782 <br />
-                    <a href="#">+10 367 826 2567</a> <br />
-                    <a href="#">contact@carpenter.com</a>
+                  <p>Kampala, Uganda<br />
+                  <a href="tel:+256701546115">0701546115</a> <br />
+                    <a href="#">jkworks@gmail.com</a>
                   </p>
                   <p>
 
@@ -104,7 +104,7 @@ const Footer = () => {
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/services">Services</Link></li>
                     <li><Link to="/contact"> Contact</Link></li>
-                    <li><a href="#"> Call Us Now</a></li>
+                    <li><a href="tel:+256701546115"> Call Us Now</a></li>
                   </ul>
                 </div>
               </div>
