@@ -35,7 +35,7 @@ const ContactPage = () => {
     const email = emailRef.current.value;
     const message = messageRef.current.value;
 
-    const whatsappMessage = `Hello there,\n\n ${message}\n\nFrom\n${name},\n${contact},\n${email}`;
+    const whatsappMessage = `Hello \n*JK Aluminum & Steel Works*,\n\n ${message}\n\nFrom\n${name},\n\ncontact: ${contact} \n\n email: ${email}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     window.open(
