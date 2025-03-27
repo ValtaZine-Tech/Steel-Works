@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useRef } from "react";
 import Header from "../partials/Header";
 import Footer from "../partials/Footer";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
@@ -17,43 +17,33 @@ const center = {
 };
 
 const ContactPage = () => {
+  const nameRef = useRef();
+  const contactRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: import.meta.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  //   // Get form data
-  //   const formData = new FormData(e.target);
+    const name = nameRef.current.value;
+    const contact = contactRef.current.value;
+    const email = emailRef.current.value;
+    const message = messageRef.current.value;
 
-  //   try {
-  //     // Save to backend
-  //     await fetch("http://localhost:8000/contact_process.php", {
-  //       method: "POST",
-  //       body: JSON.stringify(Object.fromEntries(formData)),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
+    const whatsappMessage = `Hello there,\n\n ${message}\n\nFrom\n${name},\n${contact},\n${email}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
 
-  //     // Proceed to WhatsApp
-  //     const message = formData.get("message");
-  //     const name = formData.get("name");
-  //     const contact = formData.get("contact");
-  //     const email = formData.get("email");
-
-  //     const formattedMessage = `Hello there, ${message}%0A%0AFrom%0A${name},%0A${contact},%0A${email}`;
-  //     window.open(
-  //       `https://wa.me/256789874647?text=${formattedMessage}`,
-  //       "_blank"
-  //     );
-  //   } catch (error) {
-  //     console.error("Submission failed:", error);
-  //     alert("Error saving your message. Please try again.");
-  //   }
-  // };
+    window.open(
+      `https://wa.me/256789874647?text=${encodedMessage}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   return (
     <>
@@ -84,15 +74,14 @@ const ContactPage = () => {
             <div className="col-lg-7">
               <form
                 className="form-contact contact_form"
-                method="POST"
-                action="./contact_process.php"
-                target="_blank"
                 id="contactForm"
+                onSubmit={handleSubmit}
               >
                 <div className="row">
                   <div className="col-sm-6">
                     <div className="form-group">
                       <input
+                        ref={nameRef}
                         className="form-control valid"
                         name="name"
                         id="name"
@@ -106,6 +95,7 @@ const ContactPage = () => {
                   <div className="col-sm-6">
                     <div className="form-group">
                       <input
+                        ref={contactRef}
                         className="form-control valid"
                         name="contact"
                         id="contact"
@@ -121,6 +111,7 @@ const ContactPage = () => {
                   <div className="col-12">
                     <div className="form-group">
                       <input
+                        ref={emailRef}
                         className="form-control valid"
                         name="email"
                         id="email"
@@ -131,10 +122,10 @@ const ContactPage = () => {
                       />
                     </div>
                   </div>
-
                   <div className="col-12">
                     <div className="form-group">
                       <textarea
+                        ref={messageRef}
                         className="form-control w-100"
                         name="message"
                         id="message"
