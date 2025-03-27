@@ -1,27 +1,59 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import Header from '../partials/Header'
-import Footer from '../partials/Footer'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Header from "../partials/Header";
+import Footer from "../partials/Footer";
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { Link } from "react-router-dom";
 
 const containerStyle = {
-  width: '100%',
-  height: '480px',
-  borderRadius: '15px'
+  width: "100%",
+  height: "480px",
+  borderRadius: "15px",
 };
 
 const center = {
   lat: 0.3152,
-  lng: 32.5816
+  lng: 32.5816,
 };
 
 const ContactPage = () => {
-
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: import.meta.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    id: "google-map-script",
+    googleMapsApiKey: import.meta.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   // Get form data
+  //   const formData = new FormData(e.target);
+
+  //   try {
+  //     // Save to backend
+  //     await fetch("http://localhost:8000/contact_process.php", {
+  //       method: "POST",
+  //       body: JSON.stringify(Object.fromEntries(formData)),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+
+  //     // Proceed to WhatsApp
+  //     const message = formData.get("message");
+  //     const name = formData.get("name");
+  //     const contact = formData.get("contact");
+  //     const email = formData.get("email");
+
+  //     const formattedMessage = `Hello there, ${message}%0A%0AFrom%0A${name},%0A${contact},%0A${email}`;
+  //     window.open(
+  //       `https://wa.me/256789874647?text=${formattedMessage}`,
+  //       "_blank"
+  //     );
+  //   } catch (error) {
+  //     console.error("Submission failed:", error);
+  //     alert("Error saving your message. Please try again.");
+  //   }
+  // };
 
   return (
     <>
@@ -33,7 +65,9 @@ const ContactPage = () => {
             <div className="col-xl-12">
               <div className="bradcam_text text-center">
                 <h3>Get in Touch</h3>
-                <p><Link to="/">Home</Link> / contact us</p>
+                <p>
+                  <Link to="/">Home</Link> / contact us
+                </p>
               </div>
             </div>
           </div>
@@ -42,38 +76,85 @@ const ContactPage = () => {
 
       <section className="contact-section">
         <div className="container">
-
           <div className="row mb-10">
             <div className="col-12">
               <h2 className="contact-title">Leave a Message</h2>
             </div>
 
             <div className="col-lg-7">
-              <form classNameName="form-contact contact_form" action="../pages/contact_process.php" method="POST" id="contactForm">
+              <form
+                className="form-contact contact_form"
+                method="POST"
+                action="./contact_process.php"
+                target="_blank"
+                id="contactForm"
+              >
                 <div className="row">
-                  <div className="col-12">
+                  <div className="col-sm-6">
                     <div className="form-group">
-                      <textarea className="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder=" Enter Message" required style={{ borderRadius: 15, }}></textarea>
+                      <input
+                        className="form-control valid"
+                        name="name"
+                        id="name"
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                        style={{ borderRadius: 30, height: 50 }}
+                      />
                     </div>
                   </div>
                   <div className="col-sm-6">
                     <div className="form-group">
-                      <input className="form-control valid" name="name" id="name" type="text" placeholder="Enter your name" required style={{ borderRadius: 30, height: 50 }} />
-                    </div>
-                  </div>
-                  <div className="col-sm-6">
-                    <div className="form-group">
-                      <input className="form-control valid" name="contact" id="contact" type="tel" placeholder="Contact" pattern="[0-9]{10}" maxLength={10} required style={{ borderRadius: 30, height: 50 }} />
+                      <input
+                        className="form-control valid"
+                        name="contact"
+                        id="contact"
+                        type="tel"
+                        placeholder="Contact"
+                        pattern="[0-9]{10}"
+                        maxLength={10}
+                        required
+                        style={{ borderRadius: 30, height: 50 }}
+                      />
                     </div>
                   </div>
                   <div className="col-12">
                     <div className="form-group">
-                      <input className="form-control " name="subject" id="subject" type="text" placeholder="Enter Subject" required style={{ borderRadius: 30, height: 50 }} />
+                      <input
+                        className="form-control valid"
+                        name="email"
+                        id="email"
+                        type="email"
+                        placeholder="Email"
+                        required
+                        style={{ borderRadius: 30, height: 50 }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12">
+                    <div className="form-group">
+                      <textarea
+                        className="form-control w-100"
+                        name="message"
+                        id="message"
+                        cols="30"
+                        rows="9"
+                        placeholder=" Enter Message"
+                        required
+                        style={{ borderRadius: 15 }}
+                      ></textarea>
                     </div>
                   </div>
                 </div>
+
                 <div className="form-group mt-3">
-                  <button type="submit" className="button button-contactForm boxed-btn rounded_corner extended_button">Send</button>
+                  <button
+                    type="submit"
+                    className="button button-contactForm boxed-btn rounded_corner extended_button"
+                  >
+                    Send
+                  </button>
                 </div>
               </form>
             </div>
@@ -104,7 +185,11 @@ const ContactPage = () => {
               <div className="media contact-info">
                 <span className="contact-info__icon">
                   <div className="icon">
-                    <img src="/img/icon/mail.png" alt="" style={{width: 32, height: 35}}/>
+                    <img
+                      src="/img/icon/mail.png"
+                      alt=""
+                      style={{ width: 32, height: 35 }}
+                    />
                   </div>
                 </span>
                 <div className="media-body">
@@ -143,13 +228,12 @@ const ContactPage = () => {
               <div>Loading map...</div>
             )}
           </div> */}
-
         </div>
       </section>
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

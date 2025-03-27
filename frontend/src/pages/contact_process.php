@@ -1,29 +1,70 @@
 <?php
-// contact_process.php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize form inputs
-    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $contact = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+// header("Access-Control-Allow-Origin: http://localhost:5173");
+// header("Access-Control-Allow-Methods: POST");
+// header("Content-Type: application/json");
 
-    // Format the message
-    $whatsapp_message = "Hello:\n\n";
-    $whatsapp_message .= "Name: $name\n";
-    $whatsapp_message .= "Contact: $contact\n";
-    $whatsapp_message .= "Subject: $subject\n";
-    $whatsapp_message .= "Message:\n$message";
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Process form data
+    // $name = htmlspecialchars(trim($_POST['name'] ?? ''));
+    // $contact = filter_var(trim($_POST['contact'] ?? ''), FILTER_SANITIZE_NUMBER_INT);
+    // $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+    // $message = htmlspecialchars(trim($_POST['message'] ?? ''));
+    // $subject = htmlspecialchars(trim($_POST['subject'] ?? ''));
 
-    // URL encode the message
-    $encoded_message = urlencode($whatsapp_message);
-    
-    // Replace with your WhatsApp number (include country code, remove spaces and dashes)
-    $owner_whatsapp_number = "+256789874647"; // Example: +1234567890
-    
-    // Create WhatsApp URL
-    $whatsapp_url = "https://wa.me/$owner_whatsapp_number?text=$encoded_message";
-    
+    // Validate required fields
+    // $required = ['name', 'contact', 'email', 'message'];
+    // foreach ($required as $field) {
+    //     if (empty($_POST[$field])) {
+    //         http_response_code(400);
+    //         exit(json_encode(['error' => "Missing required field: $field"]));
+    //     }
+    // }
+
+    // Save to CSV
+    // $data = [
+    //     'name' => $name,
+    //     'contact' => $contact,
+    //     'email' => $email,
+    //     'message' => $message,
+    //     'subject' => $subject,
+    //     'timestamp' => date('Y-m-d H:i:s')
+    // ];
+
+    // $file = fopen('submissions.csv', 'a');
+    // if (filesize('submissions.csv') === 0) {
+    //     fputcsv($file, array_keys($data));
+    // }
+    // fputcsv($file, $data);
+    // fclose($file);
+
     // Redirect to WhatsApp
-    header("Location: $whatsapp_url");
-    exit;
+//     $whatsappMessage = urlencode(
+//         "Hello there, $message\n\nFrom\n$name,\n$contact,\n$email"
+//     );
+//     header("Location: https://wa.me/256789874647?text=$whatsappMessage");
+//     exit();
+// }
+
+// http_response_code(405);
+// exit(json_encode(['error' => 'Method not allowed']));
+
+
+if (isset($_POST['submit'])) {
+    $name = htmlspecialchars(trim($_POST['name'] ?? ''));
+    $contact = filter_var(trim($_POST['contact'] ?? ''), FILTER_SANITIZE_NUMBER_INT);
+    $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+    $message = htmlspecialchars(trim($_POST['message'] ?? ''));
+    $subject = htmlspecialchars(trim($_POST['subject'] ?? ''));
+    
+    $whatsappMessage = urlencode(
+        "Hello there, $message\n\nFrom\n$name,\n$contact,\n$email"
+    );
+    header("Location: https://wa.me/256789874647?text=$whatsappMessage");
+} else {
+    echo "
+        <script>
+            alert('Error!')
+            window.location=history.go(-1)
+        </script>
+    ";
 }
