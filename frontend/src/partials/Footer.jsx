@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className="col-lg-6 col-md-6">
                   <div className="footer_logo">
                     <a href="#">
-                      <img src="/src/assets/img/footer_logo.png" alt="" />
+                      <img src="/img/footer_logo.png" alt="" className="footer-logo-img"/>
                     </a>
                   </div>
                 </div>

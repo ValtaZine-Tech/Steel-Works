@@ -20,7 +20,7 @@ const Header = () => {
                 <div className="col-xl-3 col-lg-3">
                   <div className="logo">
                     <Link to="/">
-                      <img src="/img/logo.png" alt="" />
+                      <img src="/img/logo.png" alt="" className="logo-img"/>
                     </Link>
                   </div>
                 </div>
@@ -57,9 +57,9 @@ const Header = () => {
                 <div className="row align-items-center">
                   <div className="col-12 d-lg-none">
                     <div className="logo ">
-                      <a href="#">
-                        <img src="/src/assets/img/logo.png" alt="" />
-                      </a>
+                      <Link to="#" onClick={()=> window.scroll(0,0)}>
+                        <img src="/img/logo.png" alt="" className="logo-img" />
+                      </Link>
                     </div>
                   </div>
                   <div className="col-xl-8 col-lg-8">
@@ -143,7 +143,7 @@ const Header = () => {
                       <div className="col-12 row mobile_menu_container">
                         <div className="logo">
                           <Link to="/">
-                            <img src="/img/logo.png" alt="" />
+                            <img src="/img/logo.png" alt="" className="logo-img"/>
                           </Link>
                         </div>
                         <div className="mobile_menu_toggle">

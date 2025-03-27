@@ -158,8 +158,8 @@ const ContactPage = () => {
                   </div>
                 </span>
                 <div className="media-body">
-                  <h3>Buttonwood, California.</h3>
-                  <p>Rosemead, CA 91770</p>
+                  <h3>Kampala, Uganda.</h3>
+                  <p>Central Division</p>
                 </div>
               </div>
               <div className="media contact-info">
@@ -169,7 +169,7 @@ const ContactPage = () => {
                   </div>
                 </span>
                 <div className="media-body">
-                  <h3>+1 253 565 2365</h3>
+                  <h3>+256 7015 46115</h3>
                   <p>Mon to Fri 9am to 6pm</p>
                 </div>
               </div>
@@ -184,7 +184,7 @@ const ContactPage = () => {
                   </div>
                 </span>
                 <div className="media-body">
-                  <h3>support@colorlib.com</h3>
+                  <h3>jkworks@gmail.com</h3>
                   <p>Send us your query anytime!</p>
                 </div>
               </div>

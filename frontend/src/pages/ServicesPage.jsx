@@ -35,7 +35,7 @@ const ServicesPage = () => {
               <div className="col-lg-4 col-md-6 mb-4">
                 <div className="single_service">
                   <div className="thumb rounded_corner">
-                    <img src="/img/service/1.png" alt="Aluminum solutions" className="rounded_corner" />
+                    <img src="/img/service/1.jpg" alt="Aluminum solutions" className="rounded_corner" />
                   </div>
                   <div className="service_info">
                     <h3>Aluminum Solutions</h3>
@@ -52,7 +52,7 @@ const ServicesPage = () => {
               <div className="col-lg-4 col-md-6 mb-4">
                 <div className="single_service">
                   <div className="thumb rounded_corner">
-                    <img src="/img/service/2.png" alt="Steel fabrication" className="rounded_corner" />
+                    <img src="/img/service/2.jpg" alt="Steel fabrication" className="rounded_corner" />
                   </div>
                   <div className="service_info">
                     <h3>Steel Fabrication</h3>
@@ -69,7 +69,7 @@ const ServicesPage = () => {
               <div className="col-lg-4 col-md-6 mb-4">
                 <div className="single_service">
                   <div className="thumb rounded_corner">
-                    <img src="/img/service/3.png" alt="Interior decor" className="rounded_corner" />
+                    <img src="/img/service/3.jpg" alt="Interior decor" className="rounded_corner" />
                   </div>
                   <div className="service_info">
                     <h3>Interior Decor</h3>

@@ -28,7 +28,7 @@ const AboutPage = () => {
             <div className="row align-items-center">
               <div className="col-xl-6  col-md-6">
                 <div className="about_thumb">
-                  <img src="/img/about/about.png" alt="Metalwork and interior decor" className="rounded_corner img-fluid" />
+                  <img src="/img/about/about.jpg" alt="Metalwork and interior decor" className="rounded_corner img-fluid" />
                   <div className="pattern_img d-none d-lg-block">
                     <img src="/img/pattern/pattern.svg" alt="Decorative pattern" className="round" />
                   </div>
