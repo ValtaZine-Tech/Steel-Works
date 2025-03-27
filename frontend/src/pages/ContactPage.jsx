@@ -35,11 +35,11 @@ const ContactPage = () => {
     const email = emailRef.current.value;
     const message = messageRef.current.value;
 
-    const whatsappMessage = `Hello \n*JK Aluminum & Steel Works*,\n\n ${message}\n\nFrom\n${name},\n\ncontact: ${contact} \n\n email: ${email}`;
+    const whatsappMessage = `\n*JK Aluminum & Steel Works*,\n\n${message}\n\nFrom\nname: ${name},\n\ncontact: ${contact},\n\n email: ${email}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     window.open(
-      `https://wa.me/256789874647?text=${encodedMessage}`,
+      `https://wa.me/256701546115?text=${encodedMessage}`,
       "_blank",
       "noopener,noreferrer"
     );
